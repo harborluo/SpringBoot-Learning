@@ -33,6 +33,9 @@
         <module>SpringBoot-FastDFS</module>
         <module>SpringBoot-Jpa-Thymeleaf</module>
         <module>SpringBoot-JTA-Atomikos</module>
+        <module>SpringBoot-JWT</module>
+        <module>SpringBoot-Kafka</module>
+
         <module>SpringBoot-Utils</module>
         <module>SpringBoot-Zookeeper-Distributed-Lock</module>
         <!--
