@@ -38,6 +38,10 @@
         <module>SpringBoot-Memcached</module>
         <module>SpringBoot-Mongodb</module>
         <module>SpringBoot-Mybatis</module>
+        <module>SpringBoot-Mybatis-Ehcache</module>
+        <module>SpringBoot-Mybatis-Multisource</module>
+        <module>SpringBoot-Mybatis-Mycat</module>
+        <module>SpringBoot-Nacos-Config</module>
 
         <module>SpringBoot-Utils</module>
         <module>SpringBoot-Zookeeper-Distributed-Lock</module>
