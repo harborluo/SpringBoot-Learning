@@ -43,6 +43,8 @@
         <module>SpringBoot-Mybatis-Mycat</module>
         <module>SpringBoot-Nacos-Config</module>
 
+
+        <module>SpringBoot-Redis-Sentinel</module>
         <module>SpringBoot-Rocketmq</module>
         <module>SpringBoot-Shiro</module>
         <module>SpringBoot-SpringSecurity</module>
