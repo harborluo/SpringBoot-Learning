@@ -35,6 +35,9 @@
         <module>SpringBoot-JTA-Atomikos</module>
         <module>SpringBoot-JWT</module>
         <module>SpringBoot-Kafka</module>
+        <module>SpringBoot-Memcached</module>
+        <module>SpringBoot-Mongodb</module>
+        <module>SpringBoot-Mybatis</module>
 
         <module>SpringBoot-Utils</module>
         <module>SpringBoot-Zookeeper-Distributed-Lock</module>
