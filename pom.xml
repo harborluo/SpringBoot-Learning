@@ -43,7 +43,15 @@
         <module>SpringBoot-Mybatis-Mycat</module>
         <module>SpringBoot-Nacos-Config</module>
 
+        <module>SpringBoot-Rocketmq</module>
+        <module>SpringBoot-Shiro</module>
+        <module>SpringBoot-SpringSecurity</module>
         <module>SpringBoot-Utils</module>
+
+        <module>SpringBoot-Validator</module>
+        <module>SpringBoot-WebFlux</module>
+        <module>SpringBoot-WebFlux-Data-Mongodb</module>
+        <module>SpringBoot-WebSocket</module>
         <module>SpringBoot-Zookeeper-Distributed-Lock</module>
         <!--
         <module>message-service</module>
