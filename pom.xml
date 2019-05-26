@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <spring-kafka.version>2.1.4.RELEASE</spring-kafka.version>
+        <spring.boot.version>2.0.0.RELEASE</spring.boot.version>
+        <spring.cloud.version>Finchley.M9</spring.cloud.version>
+
+        <log.cloud.version>1.0</log.cloud.version>
+
+    </properties>
+
+    <groupId>com.dashuai.learning</groupId>
+    <artifactId>spring-boot-learning</artifactId>
+    <version>1.0</version>
+
+    <modules>
+        <module>SpringBoot-ActiveMq</module>
+        <module>SpringBoot-Dubbo-Consumer</module>
+        <module>SpringBoot-Dubbo-Provider</module>
+        <module>SpringBoot-Elasticsearch</module>
+        <module>SpringBoot-Elasticsearch-Query</module>
+        <module>SpringBoot-Email</module>
+        <module>SpringBoot-FastDFS</module>
+        <module>SpringBoot-Jpa-Thymeleaf</module>
+        <module>SpringBoot-JTA-Atomikos</module>
+        <module>SpringBoot-Utils</module>
+        <module>SpringBoot-Zookeeper-Distributed-Lock</module>
+        <!--
+        <module>message-service</module>
+        <module>notification-service</module>
+        <module>discovery-service</module>
+        <module>config-service</module>
+        <module>web-ui-service</module>
+        -->
+    </modules>
+
+    <packaging>pom</packaging>
+    <name>spring-boot-learning</name>
+
+    <dependencyManagement>
+
+        <dependencies>
+
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>
+
+    <build>
+
+        <pluginManagement>
+            <plugins>
+                <!-- docker的maven插件，官网：https://github.com/spotify/docker-maven-plugin -->
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>0.4.12</version>
+                    <configuration>
+                        <skipDockerBuild>false</skipDockerBuild>
+                        <!-- 注意imageName一定要是符合正则[a-z0-9-_.]的，否则构建不会成功 -->
+                        <!-- 详见：https://github.com/spotify/docker-maven-plugin    Invalid repository name ... only [a-z0-9-_.] are allowed-->
+                        <imageName>${project.artifactId}:${project.version}</imageName>
+                        <!-- 指定Dockerfile所在的路径 -->
+                        <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+
+                        <imageTags>
+                            <imageTag>${project.version}</imageTag>
+                            <imageTag>latest</imageTag>
+                        </imageTags>
+
+                        <resources>
+                            <resource>
+                                <targetPath>/</targetPath>
+                                <directory>${project.build.directory}</directory>
+                                <include>${project.build.finalName}.jar</include>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.3.RELEASE</version>
+
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中 -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- docker的maven插件，官网：https://github.com/spotify/docker-maven-plugin
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <configuration>
+                    <skipDockerBuild>true</skipDockerBuild>
+                </configuration>
+            </plugin>
+             -->
+        </plugins>
+
+
+    </build>
+
+
+
+
+
+</project>
