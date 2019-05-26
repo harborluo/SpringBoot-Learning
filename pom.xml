@@ -43,7 +43,17 @@
         <module>SpringBoot-Mybatis-Mycat</module>
         <module>SpringBoot-Nacos-Config</module>
 
+        <module>SpringBoot-Nsq-Consumer</module>
 
+        <module>SpringBoot-Nsq-Producer</module>
+        <!--
+        <module>SpringBoot-Oauth2</module>
+        -->
+
+        <module>SpringBoot-RabbitMq</module>
+        <module>SpringBoot-RateLimiter</module>
+        <module>SpringBoot-Redis-Distributed-Lock</module>
+        <module>SpringBoot-Redis-Distributed-Redlock</module>
         <module>SpringBoot-Redis-Sentinel</module>
         <module>SpringBoot-Rocketmq</module>
         <module>SpringBoot-Shiro</module>
