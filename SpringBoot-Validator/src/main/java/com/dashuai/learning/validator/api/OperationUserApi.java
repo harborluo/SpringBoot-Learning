@@ -4,10 +4,7 @@ import com.dashuai.learning.utils.result.ApiResult;
 import com.dashuai.learning.validator.model.UserInfo;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.NotNull;
 
@@ -32,7 +29,7 @@ public class OperationUserApi {
      * @param desc
      * @return
      */
-    @RequestMapping(value = "/validator")
+    @RequestMapping(value = "/validator", method = RequestMethod.GET)
     public ApiResult testValidator(@NotNull(message = "name是必须的")
                                    @Length(min = 2, max = 12, message = "name长度限制为2-12")
                                    @RequestParam("name") String name,

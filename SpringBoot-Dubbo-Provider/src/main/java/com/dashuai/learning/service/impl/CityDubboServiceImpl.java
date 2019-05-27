@@ -23,6 +23,6 @@ public class CityDubboServiceImpl implements CityDubboService {
     @Override
     public String mmbMethod(String name) {
         StringBuilder sb = new StringBuilder();
-        return sb.append(name).append("尼玛卖批的！").toString();
+        return sb.append(name).append(name+", nice to meet you！").toString();
     }
 }
